@@ -3,11 +3,11 @@
 
 #define MAX 100
 
-int adj[MAX][MAX];    // Adjacency matrix
+int adj[MAX][MAX];    
 int visited[MAX];
 int stack[MAX];
 int top = -1;
-int V, E;             // Number of vertices and edges
+int V, E;             
 
 void dfs(int v) {
     visited[v] = 1;
@@ -16,7 +16,7 @@ void dfs(int v) {
             dfs(i);
         }
     }
-    stack[++top] = v; // Push vertex to stack after visiting all adjacent nodes
+    stack[++top] = v; 
 }
 
 void topologicalSort() {
@@ -42,7 +42,7 @@ int main() {
     printf("Enter number of edges: ");
     scanf("%d", &E);
 
-    // Initialize adjacency matrix and visited array
+    
     for (int i = 0; i < V; i++) {
         visited[i] = 0;
         for (int j = 0; j < V; j++) {
@@ -53,7 +53,7 @@ int main() {
     printf("Enter %d edges (format: from to):\n", E);
     for (int i = 0; i < E; i++) {
         scanf("%d %d", &u, &v);
-        adj[u][v] = 1; // Directed edge from u to v
+        adj[u][v] = 1; 
     }
 
     topologicalSort();
